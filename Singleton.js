@@ -1,9 +1,11 @@
 const singleton = {};
-singleton.name = "default";
-singleton.setName = (name) => singleton.name = name;
+let myName = "default";
+singleton.setName = (name) => myName = name;
+singleton.getName = () => myName;
+
 const createSingleton = () =>
 {
-  return singleton;
+  return Object.freeze(singleton);
 };
 
 module.exports = createSingleton;
